@@ -1,0 +1,199 @@
+/* /* * {
+    margin: 0;
+    padding: 0;
+    font-family: 'DM Sans', sans-serif;
+    font-family: 'Kanit', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Teko', sans-serif;
+}
+
+body {
+    background-image: url("https://media.istockphoto.com/id/1450058572/photo/businessman-using-a-laptop-and-touching-on-virtual-screen-contact-icons-consists-of-telephone.jpg?s=612x612&w=0&k=20&c=R5wzCGHu6ZS-8EQpJ2Z1tkSbKGGdJH4apVhFM18EXSM=");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    position: relative;
+
+} */
+/* .container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); 
+    border: 2px solid #fff ;
+    display: flex;
+
+} */
+
+/* .content {
+    border: 2px solid red ;
+    width: 105vh;
+    height: auto;
+    margin: 70px 10px 70px 150px;
+} */
+
+/* .user-input {
+    border: 2px solid red ;
+    width: 105vh;
+    height: auto;
+    margin: 70px 150px 70px 10px;
+} */
+
+/* .phone, .location, .emails {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    padding: 20px;
+    border: 2px solid yellow ;
+    margin: 5%;
+} */
+
+/* .fa-phone , .fa-map-marker , .fa-send {
+    font-size:x-large;
+    color: peru;
+    
+}
+
+h1 {
+    font-size: 45px;
+    color: #fff;
+    padding: 30px 45px 0px ;
+}
+
+span {
+    font-size: larger;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    font-size: small;
+}
+
+.user-input span {
+    color: #fff;
+    margin: 30px 0px 0px 20px;
+} 
+
+textarea, input {
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid #fff;
+    width: 90%;
+}
+
+textarea, input:focus {
+    outline: none;
+    outline-style: none;
+    border-bottom: 1px solid #fff;       
+    text-underline-offset:unset;
+}
+
+#name , #email, #messege ,#subject {
+    color: #fff;
+    margin: 0px 20px 20px 20px;
+}
+
+#submit {
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: large;
+    background: peru;
+    margin: 0.5% 2% 0% 4% ;
+}
+
+#submit:hover {
+    background: rgb(233, 118, 4);
+    cursor: pointer;
+}
+
+.box {
+    border: 2px solid red;
+    bottom: 0;
+    position: absolute;
+    
+    right: 0;
+    
+}
+
+.box .fa-brands {
+    margin: 10px;
+    color: peru;
+    font-size: x-large;
+}
+ */ 
+
+ /* Google Font  */
+
+.dm-serif-display-regular {
+    font-family: "DM Serif Display", serif;
+    /* font-weight: 600; */
+    font-style: normal;
+}
+
+.dm-serif-display-bold {
+    font-family: "DM Serif Display", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.volkhov-bold {
+    font-family: "Volkhov", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.libre-caslon-display-regular {
+    font-family: "Libre Caslon Display", serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  .nunito-sans {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+.bg-overlay-dark {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.fw-700 {
+    font-weight: 700;
+}
+
+.img-w-14 {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.w-20 {
+    width: 20%;
+    border-radius: 5px;
+}
+
+.w-18 {
+    width: 18%;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.pr-18 {
+    padding-right: 18%;
+}
+
+.box-shadow {
+    box-shadow:  0.5px 0.5px 10px -5px black;
+}
+
+.fw-600 {
+    font-weight: 600;
+}

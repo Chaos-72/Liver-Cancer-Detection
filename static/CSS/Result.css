@@ -1,0 +1,14 @@
+.container-shadow{
+    box-shadow: 1px 1px 10px -5px black;
+}
+
+.bg-smoke {
+    background: 
+}
+
+.nunito-sans {
+    font-family: "Nunito Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}

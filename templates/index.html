@@ -1,0 +1,324 @@
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Liver Cancer Detection</title>
+        <!-- icon -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!-- font awasome link...................................... -->
+        <script src="https://kit.fontawesome.com/d21ef16809.js" crossorigin="anonymous"></script>
+
+        <!-- Font Awasome cdn link .................................-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <!-- Boostrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+
+        <!-- Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans&family=Kanit:wght@500&family=Roboto:wght@300&family=Teko:wght@600&display=swap"
+            rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Noto+Sans+Elbasan&family=Playball&family=Rakkas&display=swap"
+            rel="stylesheet">
+
+        <link rel="stylesheet" href="static\CSS\index.css">
+        <link rel="stylesheet" href="static\CSS\About.css">
+        <!-- <link rel="stylesheet" href="CSS\Footer.cs s"> -->
+
+    </head>
+
+    <body>
+
+        <!-- <div class="overlay- text-"> -->
+        <header class="container">
+            <nav id="navbar" style="z-index: 1;"
+                class="navbar container navbar-expand-lg navbar-light bg-green fixed-top  px-4">
+                <a class="navbar-brand rakkas-regular " href="#">LiverX</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#Feature">Feature</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#About">About</a>
+                        </li>
+                        <li class="nav-item">
+<!--                            <a class="nav-link" href="Result.html">Result</a>-->
+                        </li>
+                        <li class="nav-item">
+<!--                            <a class="nav-link" href="">Report</a>-->
+                        </li>
+
+                    </ul>
+                </div>
+            </nav>
+
+        </header>
+        <main class="container-fluid">
+
+            <!-- Home -->
+            <section id="home" style="height: 100vh;" class=" container d-flex w-100 align-items-center">
+                <div class="col-8 col-lg-8 col-md-8 col-sm-12  -dark">
+                    <h1 class="p-2 libre-caslon-display-regular">Revolutionizing Liver Cancer Detection with
+                        Cutting-Edge AI.</h1>
+
+                    <p class="p-2 ">
+                        Transforming the landscape of medical diagnostics through groundbreaking
+                        intelligence, empowering precise and efficient solutions for liver health and care.
+                    </p>
+
+                    <div class="-dark px-2">
+                        <button class="btn text-white btn-shadow rounded-md px-4  mt-3 py-2 btn-greeny"><a href="#Feature"
+                                class="nav-link">Get Started</a></button>
+                    </div>
+                </div>
+                <!-- <div class="col-6 col-lg-6 col-md-6 col-sm-6  -primary">
+
+                    </div> -->
+            </section>
+
+            <!-- Feature -->
+
+            <section id="Feature" style="height: 100vh;" class=" h-100 bg-grey px-5">
+                <div class="d-flex flex-column align-items-center p-4 pb-5">
+                    <div class="p-5 text-center ">
+                        <h1 class="dm-serif-display-regular fs-20 ">Cancer Detection</h1>
+                        <p class="px-5">Upload your liver CT scan image using the GUI and click "Submit." The model will
+                            automatically enhance the image, segment the tumor, and display the final results on the screen,
+                            identifying whether the tumor is malignant, benign, or normal.</p>
+                    </div>
+                    <div class="input-group w-50 justify-content-center rounded btn-shadow ">
+                              <form id="uploadForm" action="/predict" method="POST" enctype="multipart/form-data" class="p-2 d-flex justify-content-center align-items-center">
+                                    <input type="file" name="file" class="form-control " required>
+                                    <button type="submit" class="upload-button text-white" id="">UPLOAD</button>
+                              </form>
+                    </div>
+                </div>
+
+                <!-- Show loading while image is processing -->
+                <div style="display: none;" id="loading" class=" align-items-center flex-column p-2">
+                    <img src="static/Images/loading-gif.gif" alt="loading icon">
+                    <p style="">Processing, Please wait...</p>
+                </div>
+
+                <div class="row">
+                    <!-- input image -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-4 px-4">
+                        <img id="input_image_show" class="w-100 p-4"
+                            src="{{ input_img_url if input_img_url else 'static/Images/specimen_liver.png' }}"
+                            alt="Input Image">
+                        <figure class="text-center image-caption rakkas-regular">
+                            <caption class="">Input Image</caption>
+                        </figure>
+                    </div>
+
+                    <!-- Enhanced image -->
+                    <div id="resultdiv"  class="col-lg-4 col-md-4 col-sm-12 col-4 px-4">
+                        <img id="output_image" class="w-100 p-4"
+                            src="{{ enhanced_img_url if enhanced_img_url else 'static/Images/specimen_liver.png' }}"
+                            alt="Enhanced Image">
+
+                        <figure class="text-center image-caption rakkas-regular">
+                            <caption id="output_text" class="">Enhanced Image</caption>
+                        </figure>
+                    </div>
+
+                    <!-- Tumor segmentation image -->
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-4 px-4">
+                        <img class="w-100 p-4"
+                            src="{{ liver_seg_url if liver_seg_url else 'static/Images/specimen_liver.png' }}"
+                            alt="Tumour image">
+
+                        <figure class="text-center image-caption rakkas-regular">
+                            <caption class="">Liver Segment Image</caption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="p-4 text-center fw-bold">
+                    <p class="fs-4">Given CT Scan image is {{predicted_class}}</p>
+                </div>
+            </section>
+
+
+            <!-- About section -->
+            <section id="About" class=" bg-overlay- bg-white text-dark mt p-5">
+                <div class="text-  pb-4">
+                    <h1 class="dm-serif-display-regular fs-20 about text-center">About</h1>
+                </div>
+                <div class="row pt-4 pb-5">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-6 pt-5 text-right">
+                        <h2 class="dm-serif-display-regular pr-18 ">Our Project</h2>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-6 pt-4 px-5">
+                        <p class="pt-3">We are a team of passionate final-year BTech students dedicated to
+                            revolutionizing liver cancer detection. Our project combines advanced image enhancement
+                            techniques, tumor segmentation, and classification using state-of-the-art AI models. By
+                            processing CT scan images, our system identifies tumors and classifies them into three
+                            categories: Malignant, Benign, or Normal.</p>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="pb-5 pt-4 text-center d-flex flex-column align-items-center">
+                        <h2 class="dm-serif-display-regular ">
+                            Features and Methods
+                        </h2>
+                        <p class="px-5 w-75 ">Advanced techniques ensure precise diagnostics through enhanced imaging,
+                            detailed segmentation, and accurate categorization for effective treatment planning</p>
+                    </div>
+                </div>
+
+                <div class="row pt-4 px-5 pb-5 border-dark ">
+                    <div class="col-4 col-lg-4 col-md-6 col-sm-12 text-center">
+                        <img src="static/Images/image_enhacement_logo-removebg-preview.png" class="w-18"
+                            alt="image enhancement logo">
+                        <h5 class="dm-serif-display-regular py-2 fw-bold">Image Enhancement</h5>
+                        <p class="px-3">Advanced enhancement of CT scan images using Generative Adversarial Networks (GANs)
+                            for improved clarity and diagnostic accuracy.</p>
+                    </div>
+
+                    <div class="col-4 col-lg-4 col-md-6 col-sm-12 text-center">
+                        <img src="static/Images/Tumour_segmentation-removebg-preview.png" class="w-18"
+                            alt="image enhancement logo">
+                        <h5 class="dm-serif-display-regular py-2 fw-bold">Tumour Segmentation</h5>
+                        <p class=" px-3">Our system isolates tumor regions from enhanced images with precision using
+                            state-of-the-art segmentation models.</p>
+                    </div>
+                    <div class="col-4 col-lg-4 col-md-6 col-sm-12 text-center">
+                        <img src="static/Images/Tumour_classification_logo-removebg-preview.png" class="w-18"
+                            alt="image enhancement logo">
+                        <h5 class="dm-serif-display-regular py-2 fw-bold">Tumour Classification</h5>
+                        <p class="px-3">Our deep learning-powered classification model determines if the tumor is Malignant,
+                            Benign, or Normal, ensuring accurate diagnosis.</p>
+                    </div>
+
+                </div>
+
+                <div class="bg-grey px-5 py-5">
+                    <div class="text-center ">
+                        <h2 class="dm-serif-display-regular ">Our Team</h2>
+
+                        <!-- Guide Image -->
+                        <div class="d-flex flex-column align-items-center pt-5">
+                            <div class="p-2 bg-light w-20 box-shadow ">
+                                <img src="https://img.freepik.com/premium-photo/young-happy-pretty-smiling-professional-business-woman_763672-470.jpg"
+                                    class="img-w-14" alt="Nikita Pande">
+                                <figcaption class="pt-2 ">
+                                    <span class="fw-600 fs-6">Ms. Nikita Pande</span> <br>
+                                    <i class="mt-3">Department of CSE, MGMCEO, Nanded</i>
+                                </figcaption>
+                            </div>
+                        </div>
+
+                        <!-- Team Members -->
+                        <div class="d-flex pt-5">
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-3">
+                                <div style="margin-left: 12%; border-radius: 5px "
+                                    class="p-2 bg-light w-75 text-center box-shadow">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfQtXXyUkxZibk0UkDXZUXg1JI3W-ZZm3MvQ&s"
+                                        class="img-w-14" alt="Sachin Bodke">
+                                    <figcaption class="pt-2 fw-600">Sachin Bodke</figcaption>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-3">
+                                <div style="margin-left: 12%; border-radius: 5px "
+                                    class="p-2 bg-light w-75 text-center box-shadow">
+                                    <img src="static/Images/Ravi.jpg"
+                                        class="img-w-14" alt="Sachin Bodke">
+                                    <figcaption class="pt-2 fw-600">Ravi Bhagat</figcaption>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-3">
+                                <div style="margin-left: 12%; border-radius: 5px "
+                                    class="p-2 bg-light w-75 text-center box-shadow">
+                                    <img src="static/Images/newAkash.jpg"
+                                        class="img-w-14 " alt="Akash Bhadarge" />
+                                    <figcaption class="pt-2 fw-600">Akash Bhadarge</figcaption>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-3">
+                                <div style="margin-left: 12%; border-radius: 5px "
+                                    class="p-2 bg-light w-75 text-center box-shadow">
+                                    <img src="https://images-ng.pixai.art/images/orig/f4076d8f-5605-4267-af1d-781066e4b041"
+                                        class="img-w-14" alt="Mrunal Bhasarkar" />
+                                    <figcaption class="pt-2 fw-600">Mrunal Bhasarkar</figcaption>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+
+        </main>
+        <!-- </div> -->
+
+        <!-- Footer -->
+
+        <footer class="p-5">
+            <div class="d-flex flex-column align-items-center">
+                <div style="width: 15%;" class="row justify-content-  border-dark">
+                    <div class="col-3 col-lg-3 col-md-3 col-sm-12 text-center ">
+                        <a href="https://www.facebook.com/"><i class="fs-3 text-green fa-brands fa-facebook"></i></a>
+                    </div>
+                    <div class="col-3 col-lg-3 col-md-3 col-sm-12 text-center">
+                        <a href="https://www.x.com/"><i class="fs-3 text-green fa-brands fa-twitter"></i></a>
+                    </div>
+                    <div class="col-3 col-lg-3 col-md-3 col-sm-12 text-center">
+                        <a href="https://www.linkedin.com/in/ravibhagat3108/"><i class="fs-3 text-green fa-brands fa-linkedin"></i></a>
+                    </div>
+                    <div class="col-3 col-lg-3 col-md-3 col-sm-12 text-center">
+                        <a href="https://www.instagram.com/"><i class="fs-3 text-green fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="row w-50 mt-4 ">
+                    <div class="col-3 col-lg-3 col-md-3 col-sm-12 text-center ">
+                        <a href="index.html" class="nav-link fw-normal">Home</a>
+                    </div>
+                    <div class="col-3 col-lg-3 col-md-3 col-sm-12 text-center">
+                        <a href="#Feature" class="nav-link fw-normal">Feature</a>
+                    </div>
+                    <div class="col-3 col-lg-3 col-md-3 col-sm-12 text-center">
+                        <a href="#About" class="nav-link fw-normal">About</a>
+                    </div>
+                    <div class="col-3 col-lg-3 col-md-3 col-sm-12 text-center">
+                        <a href="Result.html" class="nav-link fw-normal">Result</a>
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <p class="pt-1">
+                        ©2024 Nerd HERD | All Rights Reserved
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="static/script.js"></script>
+    </body>
+
+    </html>

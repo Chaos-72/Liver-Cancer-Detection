@@ -1,0 +1,151 @@
+body {
+    /* background-image:url("https://www.medicacancerhospital.in/wp-content/uploads/2023/01/blog-mobile.jpg"); */
+    /* background-position: center center; */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    /* z-index: -100; */
+    /* position: relative; */
+
+
+    width: 100%;
+    /* height: 100vh;   */
+    background: url("https://www.medicacancerhospital.in/wp-content/uploads/2023/01/blog-mobile.jpg")    ;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment:scroll;
+    opacity: 1;
+
+}
+
+/* Overlay on bg */
+.overlay-bg {
+    background: rgba(0, 0, 0, 0.15);
+    z-index: -100;
+    /* position: fixed; */
+    top: 0;
+    left: 0;
+    /* z-index: -1; */
+    width: 100%;
+    /* height: 100vh; */
+}
+
+/*  Boostrap Navbar costume*/
+.navbar-expand-lg .navbar-collapse {
+    flex-direction: row-reverse;
+}
+
+.nav-link {
+    font-weight: bold;
+}
+
+.rakkas-regular {
+    font-family: "Rakkas", serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+    font-style: normal;
+}
+ 
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    /* background-color: transparent; */
+    background-color: transparent;
+}
+
+span li {
+    float: left;
+    padding-left: 5rem;
+}
+
+li {
+    float: right;
+    padding-left: 2rem;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+
+span li img {
+    size: 2rem;
+}
+
+/* round btn */
+.rounded-md {
+    border-radius: 6rem;
+}
+
+.btn-greeny, .bg-green{
+    background: rgb(18, 108, 155);
+    background: linear-gradient(90deg, rgba(18, 108, 155, 1) 0%, rgba(18, 108, 155, 1) 0%, rgba(18, 108, 155, 1) 100%);
+}
+
+.upload-button {
+    background: rgb(18, 108, 155);
+    background: linear-gradient(90deg, rgba(18, 108, 155, 1) 0%, rgba(18, 108, 155, 1) 0%, rgba(18, 108, 155, 1) 100%);
+    padding: 15.5px 15px;
+    border-radius: 0px 5px 5px 0px;
+    line-height: 2px;
+    left: -6px;
+    position: relative;
+
+}
+.btn-shadow {
+    box-shadow: 1px 1px 2px 0.2px black;
+}
+
+#loading {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    color: #333;
+    z-index: 1000; /* Ensure it appears above other content */
+}
+/* ================ Feature setion = =========== */
+
+.image-caption {
+    font-size: 1.5rem;
+    font-weight: 500;
+    font-family: 'Times New Roman', Times, serif
+
+}
+
+#uploadForm {
+    width: 100%;
+    display: flex;
+
+}
+
+.form-control {
+    width: 75%
+}
+
+.bg-grey {
+    background: #f0f7ff;
+}
+
+/* ========= footer ======== */
+.text-green {
+    color: rgb(18, 108, 155);
+}
