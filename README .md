@@ -58,7 +58,7 @@ This project presents an AI-powered system for liver cancer detection that combi
 4. View the enhanced image, segmented liver region, and classification results.
 
 ## Folder Structure
-
+```
 ├── model
 │   ├── generator_epoch_50.h5       # GAN model for image enhancement
 │   ├── liver_tumor_classifier.h5   # Model for tumor classification
@@ -71,7 +71,7 @@ This project presents an AI-powered system for liver cancer detection that combi
 ├── uploads                         # Folder for user uploads
 ├── app.py                          # Flask application code
 ├── requirements.txt                # Python dependencies
-
+```
 
 ## Demo
 
