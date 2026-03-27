@@ -1,15 +1,101 @@
-# Liver Cancer Detection System Using AI
+# CT Scan Image Enhancement for Liver Cancer Detection
 
-## Overview
-This project presents an AI-powered system for liver cancer detection that combines state-of-the-art techniques for image enhancement, tumor segmentation, and classification. It provides a user-friendly web interface for medical professionals to upload liver CT scans and receive processed outputs for better diagnosis.
+This project implements a deep learning-based system designed to enhance computed tomography (CT) images, specifically for improving the accuracy of liver cancer detection. By leveraging Generative Adversarial Networks (GANs), the system addresses common diagnostic hurdles such as low image contrast, noise, and complex anatomical structures that often impede early-stage tumor identification.
 
 ---
 
-## Features
-- **Image Enhancement**: Uses Generative Adversarial Networks (GANs) to enhance CT scan image quality.
-- **Tumor Segmentation**: Accurately isolates liver regions and tumor areas.
-- **Tumor Classification**: Categorizes tumors into Malignant, Benign, or Normal.
-- **User-Friendly Interface**: Intuitive web-based platform for seamless interaction.
+## System Workflow
+
+The core pipeline follows an adversarial training process where a generator network refines low-quality CT scans, and a discriminator network evaluates the authenticity of the enhancements.
+
+
+1.  **Input**: Non-enhanced, low-contrast CT images.
+2.  **Generation**: The Generative Network $G(z)$ creates an enhanced version of the input.
+3.  **Loss Calculation**: The system applies Perceptual Loss and Wasserstein GAN (WGAN) loss to ensure structural fidelity.
+4.  **Discrimination**: The Discriminator Network $D(x)$ distinguishes between the generated image and high-quality reference scans.
+5.  **Optimization**: An iterative process of error maximization for the discriminator and error minimization for the generator refines the output until it is indistinguishable from high-quality medical imaging.
+6.  **Classification**: Enhanced images are passed to a Convolutional Neural Network (CNN) to distinguish between malignant and normal liver tissues.
+
+---
+
+## Data Collection and Datasets
+
+The system is developed and validated using a variety of publicly available, high-resolution medical datasets:
+
+* **Liver Tumor Segmentation Challenge (LiTS)**: Contains detailed liver and tumor annotations across multiple patients, essential for training robust segmentation algorithms.
+* **Sliver07**: Offers a standardized set of images used for benchmarking liver segmentation methods.
+* **Ircadb**: Provides high-resolution scans that assist in the fine-tuning of the image enhancement models.
+
+---
+
+## Data Preprocessing
+
+A rigorous preprocessing phase ensures consistency across different imaging conditions and scanner types.
+
+* **Intensity Normalization**: Normalizes pixel intensity values to focus the model on pathological features rather than hardware-induced variations.
+* **Artifact Removal**: Filters are applied to eliminate specks and artifacts that might distort image data.
+* **Contrast Enhancement**: Histogram equalization is utilized to improve the initial visual quality of the CT scans.
+
+---
+
+## Model Architecture
+
+The architecture utilizes a dual-network GAN setup combined with a classification-specific CNN.
+
+### 1. Generative Network
+The generator is designed to learn the complex mapping from low-quality inputs to high-quality outputs. It focuses on preserving critical structural details while reducing noise.
+
+### 2. Discriminator Network
+The discriminator is trained to differentiate between real, high-quality reference images and the synthetic outputs produced by the generator.
+
+### 3. Classification CNN
+A specialized Convolutional Neural Network extracts intricate features from the GAN-enhanced images to facilitate tissue classification. This network uses advanced techniques like data augmentation (rotation, scaling, and translation) to improve its robustness against image acquisition variations.
+
+---
+
+## Loss Functions
+
+Two primary loss functions guide the adversarial training process:
+
+* **Perceptual Loss**: Ensures that the generated images maintain the semantic and structural integrity of the original liver anatomy.
+* **Wasserstein Loss (WGAN)**: Provides more stable training and higher-quality image generation compared to traditional GAN loss functions.
+
+---
+
+## Training Procedure
+
+* **Initialization**: GAN networks are initialized with random weights.
+* **Adversarial Training**: The generator and discriminator are trained iteratively. The generator continuously improves its output to "fool" the discriminator, while the discriminator learns to be more precise in its evaluations.
+* **Validation**: To prevent overfitting and ensure generalizability, the model's performance is validated on a separate, unseen set of images.
+* **Optimization**: High-performance computing resources, such as GPUs and cloud platforms, are used to manage large-scale data processing and intensive training cycles.
+
+---
+
+## Results and Performance Analysis
+
+The application of GAN-based enhancement significantly improves both visual clarity and diagnostic metrics.
+
+### Image Quality Metrics
+| Metric | Original Image (Average) | GAN-Enhanced Image (Average) |
+| :--- | :--- | :--- |
+| **Structural Similarity Index (SSIM)** | 0.72  | **0.91** |
+| **Peak Signal-to-Noise Ratio (PSNR)** | 22.5 dB  | **31.8 dB**  |
+
+### Diagnostic Accuracy
+* **Tumor Segmentation**: The Dice Similarity Coefficient (DSC), measuring the overlap between predicted and ground-truth segmentation, increased from **0.68 to 0.85**.
+* **Classification Accuracy**: The ability to distinguish between malignant and normal tissues improved from **78% to 92%**.
+
+
+---
+
+## Implementation Details
+
+* **Frameworks**: The system is built using **TensorFlow**, allowing for the development of complex neural network architectures and the management of large-scale datasets.
+* **Platform**: The imaging system is integrated into a **web-based platform** that supports real-time image analysis. This ensures the solution is scalable and accessible for clinical use globally.
+
+### 📄 Publication
+
+[CT Scan Image Enhancement for Liver Cancer Detection](https://www.ijraset.com/research-paper/ct-scan-image-enhancement-for-liver-cancer-detection)
 
 ---
 
